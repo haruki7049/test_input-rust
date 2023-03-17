@@ -9,8 +9,13 @@ use std::thread;
 
 fn main() {
     startup_messages();
-    let hoge = check_no_error(input());
-    println!("{}", hoge);
+    println!("Type and say 'hoge'!!");
+    let hoge = pick_up_string(input());
+    if hoge == String::from("hoge") {
+        println!("congratsrations!! hoge~");
+    } else {
+        println!("... Why don't you say hoge?");
+    }
 }
 
 fn startup_messages() {
@@ -35,9 +40,9 @@ fn input() -> Result<String, std::io::Error> {
     Ok(line)
 }
 
-fn check_no_error(result: Result<String, std::io::Error>) -> String{
+fn pick_up_string(result: Result<String, std::io::Error>) -> String{
     match result {
         Ok(line) => return String::from(line),
-        Err(_) => return String::from("hoge"),
+        Err(_) => return String::from("not hoge"),
     }
 }
