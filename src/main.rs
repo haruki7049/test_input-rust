@@ -11,8 +11,8 @@ use std::thread;
 fn main() {
     startup_messages();
     println!("Type and say 'hoge'!!");
-    let hoge = pick_up_string(input());
-    if hoge == String::from("hoge") {
+    let sentence = pick_up_string(input());
+    if sentence == String::from("hoge") {
         println!("congratsrations!! hoge~");
     } else {
         println!("... Why don't you say hoge?");
